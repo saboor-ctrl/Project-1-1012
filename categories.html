@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brain Sprint - Choose Category</title>
+  <link rel="stylesheet" href="categories.css" />
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Brain Sprint Logo" class="logo" />
+  </header>
+
+  <div class="container">
+    <h1>Welcome, <span id="playerNameDisplay"></span>!</h1>
+    <p>Choose a category to start your Brain Sprint</p>
+
+    <div class="categories">
+      <button class="category-btn" data-category="sports">Sports</button>
+      <button class="category-btn" data-category="movies">Movies</button>
+      <button class="category-btn" data-category="science">Science</button>
+      <button class="category-btn" data-category="celebrities">Celebrities</button>
+      <button class="category-btn" data-category="history">History</button>
+      <button class="category-btn" data-category="technology">Technology</button>
+    </div>
+  </div>
+
+  <script>
+    // Get player name from localStorage
+    const name = localStorage.getItem('playerName');
+    document.getElementById('playerNameDisplay').textContent = name || 'Player';
+
+    // Handle category selection
+    const buttons = document.querySelectorAll('.category-btn');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.dataset.category;
+        localStorage.setItem('selectedCategory', category);
+        window.location.href = 'difficulty.html'; // go to difficulty selection page
+      });
+    });
+  </script>
+</body>
+</html>

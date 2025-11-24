@@ -10,6 +10,18 @@ body {
   margin: 0;
 }
 
+body {
+  background: linear-gradient(270deg, #1a1a40, #2a2a72, #009ffd);
+  background-size: 600% 600%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* Logo placement */
 header {
   position: absolute;
@@ -18,9 +30,9 @@ header {
 }
 
 .logo {
-  width: 200px;        /* adjust size as needed */
+  width: 200px;       
   height: auto;
-  border-radius: 10px; /* optional: gives soft corners */
+  border-radius: 10px;
 }
 
 .container {

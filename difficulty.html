@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brain Sprint - Choose Difficulty</title>
+  <link rel="stylesheet" href="difficulty.css" />
+
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="Brain Sprint Logo" class="logo" />
+  </header>
+
+  <div class="container">
+    <h1>Great choice, <span id="playerNameDisplay"></span>!</h1>
+    <p>You selected <span id="categoryDisplay" class="highlight"></span></p>
+    <p>Now pick your difficulty level:</p>
+
+    <div class="difficulties">
+      <button class="diff-btn" data-difficulty="easy">Easy</button>
+      <button class="diff-btn" data-difficulty="medium">Medium</button>
+      <button class="diff-btn" data-difficulty="hard">Hard</button>
+    </div>
+
+    <button class="back-btn" id="backBtn">← Back to Categories</button>
+  </div>
+
+  <script>
+    // Load name and category from localStorage
+    const name = localStorage.getItem('playerName');
+    const category = localStorage.getItem('selectedCategory');
+
+    document.getElementById('playerNameDisplay').textContent = name || 'Player';
+    document.getElementById('categoryDisplay').textContent = category
+      ? category.charAt(0).toUpperCase() + category.slice(1)
+      : 'a category';
+
+    // Handle difficulty selection
+    const diffButtons = document.querySelectorAll('.diff-btn');
+    diffButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const difficulty = button.dataset.difficulty;
+        localStorage.setItem('selectedDifficulty', difficulty);
+        window.location.href = 'quiz.html'; // Move to quiz page
+      });
+    });
+
+    // Back button to categories page
+    document.getElementById('backBtn').addEventListener('click', () => {
+      window.location.href = 'categories.html';
+    });
+  </script>
+</body>
+</html>

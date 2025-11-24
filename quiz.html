@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brain Sprint - Quiz</title>
-  <link rel="stylesheet" href="style.css">
-
+  <title>Brain Sprint - Sports Quiz</title>
+  <link rel="stylesheet" href="quiz.css">
 </head>
 <body>
-    <header>
-        <img src="images/logo.png" alt="Brain Sprint Logo" class="logo" />
-    </header>
+ <div id="timer">60</div>
 
-  <h2>Welcome to the Quiz Page!</h2>
-  <p>This page will show questions later.</p>
+ <div id="quiz-container">
+  <div id="quiz-header">
+    <h2 id="question"></h2> 
+  </div>
+
+  <div id="options"></div>
+    <button id="hint-button" class="hint-btn">Hint: 2</button>
+  </div>
+
+  <script src="quiz.js"></script>
 </body>
 </html>

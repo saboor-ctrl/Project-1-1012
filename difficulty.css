@@ -1,0 +1,95 @@
+body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1a1a40, #2a2a72, #009ffd);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(270deg, #1a1a40, #2a2a72, #009ffd);
+      background-size: 600% 600%;
+      animation: gradientMove 12s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    header {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .logo {
+      width: 150px;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #cfe2ff;
+      margin-bottom: 30px;
+    }
+
+    .difficulties {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+
+    .diff-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      padding: 20px;
+      border-radius: 15px;
+      font-size: 1rem;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .diff-btn:hover {
+      background: #00c6ff;
+      transform: scale(1.05);
+    }
+
+    .back-btn {
+      margin-top: 30px;
+      background: transparent;
+      border: 2px solid #00c6ff;
+      color: #00c6ff;
+      padding: 10px 25px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-weight: bold;
+    }
+
+    .back-btn:hover {
+      background: #00c6ff;
+      color: white;
+    }
+
+    .highlight {
+      color: #ffeb3b;
+      font-weight: bold;
+    }
