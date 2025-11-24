@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brain Sprint - Entry</title>
-  <link rel="stylesheet" href="style.css" />
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Brain Sprint - Entry</title>
+ <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <img src="images/logo.png" alt="Brain Sprint Logo" class="logo" />
-  </header>
-  <div class="container">
-    <h1 class="title">Brain Sprint</h1>
-    <p class="tagline">Test your speed and knowledge across fun categories!</p>
+ <header>
+  <img src="images/logo.png" alt="Brain Sprint Logo" class="logo" />
+ </header>
+ <div class="container">
+  <h1 class="title">Brain Sprint</h1>
+  <p class="tagline">Test your speed and knowledge across fun categories!</p>
 
-    <div class="intro-box">
-      <p>Welcome to <strong>Brain Sprint</strong>, a fast-paced quiz game where you race against time! 
-      Choose your category, select a difficulty level, and see how many questions you can conquer.</p>
-    </div>
-
-    <form id="entryForm">
-      <label for="playerName">Enter your name to begin:</label>
-      <input type="text" id="playerName" name="playerName" placeholder="Your Name" required />
-      <button type="submit" class="start-btn">Start Game</button>
-    </form>
+  <div class="intro-box">
+   <p>Welcome to <strong>Brain Sprint</strong>, a fast-paced quiz game where you race against time! 
+   Choose your category, select a difficulty level, and see how many questions you can conquer.</p>
   </div>
 
-  <script>
-    document.getElementById('entryForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('playerName').value.trim();
+  <form id="entryForm">
+   <label for="playerName">Enter your name to begin:</label>
+   <input type="text" id="playerName" name="playerName" placeholder="Your Name" required />
+   <button type="submit" class="start-btn">Start Game</button>
+  </form>
+ </div>
 
-      if (name) {
-        // Save name in localStorage for later use in quiz page
-        localStorage.setItem('playerName', name);
-        window.location.href = 'categories.html'; // navigate to quiz page
-      }
-    });
-  </script>
+ <script>
+  document.getElementById('entryForm').addEventListener('submit', function(e) {
+   e.preventDefault();
+   const name = document.getElementById('playerName').value.trim();
+
+   if (name) {
+    // Save name to browser's storage
+    localStorage.setItem('playerName', name);
+    // Redirect to category selection page
+    window.location.href = 'categories.html'; 
+   }
+  });
+ </script>
 </body>
 </html>
